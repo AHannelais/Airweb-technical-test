@@ -1,13 +1,17 @@
 import React from "react";
-import { AppBar, Toolbar , Typography } from "@material-ui/core";
+import { AppBar, Toolbar , Typography,   useMediaQuery } from "@material-ui/core";
 import { GoToMyCart } from "./routing/GoToMyCart";
 import { history } from "./routing/history"
+//import { useMediaQuery } from "../utils/useMediaQuery"
 import doge from "../images/doge.png"
 
 export function Header() {
+  const isPageWide = useMediaQuery('(min-width: 500px)')
+    
   return (
     <AppBar position="fixed" color="default">
-      <Toolbar>
+      <Toolbar style={{ display : "flex", flexDirection : isPageWide ? "row" : "column"}}>
+      <div style={{display : "flex"}}>
       <img
           style={{
             cursor: "pointer",
@@ -22,15 +26,17 @@ export function Header() {
         <Typography variant="h6"
          style={{
           cursor: "pointer",
+          margin : "auto"
         }}
         onClick={() => {
           history.push("/");
         }} >
             DogeShop
         </Typography>
+       </div>
         <div
           style={{
-            position: "absolute",
+           position: isPageWide?  "absolute" : "relative",
             right: "25px",
           }}
         >

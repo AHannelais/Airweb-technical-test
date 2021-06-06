@@ -10,6 +10,7 @@ export function GoToMyCart() {
 
     return (
         <Button variant="outlined"
+        style={{margin : 5}}
         onClick={()=> history.push("/cart")}
         >
             My Cart

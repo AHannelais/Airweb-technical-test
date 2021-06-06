@@ -2,18 +2,13 @@ import React from "react";
 import {  useSelector } from "react-redux";
 import { RootState } from "../../redux"
 import { Product } from "./Product"
-import {List, makeStyles, createStyles, Theme } from "@material-ui/core"
+import {List, makeStyles, createStyles, Theme, Divider } from "@material-ui/core"
 
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      width: '100%',
-      maxWidth: '36ch',
-      backgroundColor: theme.palette.background.paper,
-    },
-    inline: {
-      display: 'inline',
+      margin : "auto", 
     },
   }),
 );
@@ -25,7 +20,11 @@ export function ProductList() {
 
   return (
     <List className={classes.root}>
-    {products.map(product => <Product key={product.id} productId={product.id}/>)}
+    {products.map((product, index) => 
+    <div key={product.id}>
+    <Product  productId={product.id}/>
+    {index + 1 < products.length && <Divider variant="inset" component="li" />}
+    </div>)}
     </List>
   );
 }

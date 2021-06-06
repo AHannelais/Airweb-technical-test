@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const isPageWide = useMediaQuery('(min-width: 500px)')
   const theme = React.useMemo(
     () =>
       createMuiTheme({
@@ -46,7 +47,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline classes={classes}>
         <Header />
-        <div style={{ marginTop: "100px" }}>
+        <div style={{ marginTop: isPageWide ? "100px" : "150px" }}>
             <Routes />
           </div>
       </CssBaseline>
