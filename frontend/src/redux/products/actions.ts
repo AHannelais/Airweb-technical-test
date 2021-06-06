@@ -6,7 +6,7 @@ import {
   import { server } from "../../utils/server";
   
   
-export const fetchCategories = (): ProductThunkAction => async (dispatch) => {
+export const fetchProducts = (): ProductThunkAction => async (dispatch) => {
     try {
       const response = await server.get(`/products`);
       dispatch({ type: FETCH_PRODUCTS, payload: response.data });

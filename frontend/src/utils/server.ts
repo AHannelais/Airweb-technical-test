@@ -1,5 +1,7 @@
 import axios from "axios";
+//@ts-ignore
+console.log(window._env_)
 export const server = axios.create({
 //@ts-ignore
-  baseURL: window._env_["SERVER_HOST"],
+  baseURL: "http://localhost:3000",
 });
