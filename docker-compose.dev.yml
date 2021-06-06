@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "80:80"
+    restart: on-failure
+    container_name: airweb-dev-frontend
+    environment:
+      - "SERVER_HOST=http://127.0.0.1:3000"
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    container_name: airweb-dev-server
+    volumes:
+      - ./server:/app
