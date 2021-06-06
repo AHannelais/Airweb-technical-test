@@ -6,6 +6,11 @@
 - Download or Clone the repository
 - Extract to your desired location and open your text editor in the right folder
 
+### Ready-Made Version :
+
+- run `docker compose up --build -d` to launch the application
+- Go to adress : [localhost](http://localhost) on your browser to start using the app
+
 ### Development Version :
 
 - Install Node.js in your desktop : [Node.js](https://nodejs.org/en/)
