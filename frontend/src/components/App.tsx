@@ -32,9 +32,9 @@ function App() {
       createMuiTheme({
         palette: {
           type: prefersDarkMode ? "dark" : "light",
-          primary: { main: "#009db7" },
-          secondary: { main: "#005b7f" },
-          error: { main: "#d70030" },
+          primary: { main: "#252b31" },
+          secondary: { main: "#5e6668" },
+          error: { main: "#d49c6b" },
           success: { main: "#2fd700" },
         },
       }),

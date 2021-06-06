@@ -3,6 +3,8 @@ import {  useDispatch } from "react-redux";
 import { fetchCategories } from "../../redux/categories/actions"
 import { fetchProducts} from "../../redux/products/actions"
 import { ProductList } from "./ProductList"
+import {Title, Layout } from "../ui"
+
 export function Store() {
   const dispatch = useDispatch()
   useEffect(()=>{
@@ -12,6 +14,11 @@ export function Store() {
   },[])
   
   return (
-    <ProductList/>
+    <>
+      <Title title="Store"/>
+      <Layout>
+        <ProductList/>
+      </Layout>
+    </>
   );
 }

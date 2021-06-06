@@ -20,7 +20,7 @@ export function GoToMyCart() {
             vertical: 'bottom',
             horizontal: 'right',
           }}
-          max={9}
+          max={99}
         >
           <ShoppingCartIcon  fontSize="large" />
         </Badge>
